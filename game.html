@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/game.css">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <!--PREGAME CODE-->
+    <div id = 'pregame'>
+        <a href="menu.html">← Back to main menu</a><!--The href attribute would change depending on what the design team titles their main page.-->
+        <p id = 'title'>Choose a topic!</p>
+        <p id = 'subtitle'>A quiz of 5 random questions from the chosen topic would be generated. Your final score at the end would depend on your accuracy, win streak, and time spent per question.</p>
+
+        <div class = 'quizChoice'>Local customs</div>
+        <div class = 'quizChoice'>Sensitive Hawaiian environments</div>
+        <div class = 'quizChoice'>"Leave no trace" ethics</div>
+        <div class = 'quizChoice'>Safety</div>
+        <div class = 'quizChoice'>Neighborhood sensitivity</div>
+
+        <div id = 'timeHolder'>
+            <p id = 'timeLimit'>Time limit per question:</p>
+            <div class = 'choiceHolder'>
+                <div class = 'choiceSelection'></div>
+                <p class = 'choiceContent'>15 seconds</p>
+            </div>
+    
+            <div class = 'choiceHolder'>
+                <div class = 'choiceSelection'></div>
+                <p class = 'choiceContent'>20 seconds</p>
+            </div>
+    
+            <div class = 'choiceHolder'>
+                <div class = 'choiceSelection'></div>
+                <p class = 'choiceContent'>30 seconds</p>
+            </div>
+    
+            <div class = 'choiceHolder'>
+                <div class = 'choiceSelection'></div>
+                <p class = 'choiceContent'>No time limit</p>
+            </div>
+
+            
+        </div>
+        <div id = 'getStarted'>Get Started</div>
+    </div>
+
+    <div id = 'ingame'>
+
+    </div>
+
+    <div id = 'postgame'>
+
+    </div>
+</body>
+<script src="js/game.js"></script>
+</html>
