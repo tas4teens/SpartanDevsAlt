@@ -31,17 +31,32 @@
             <p id = 'timeLimit'>Time limit per question:</p>
             <div class = 'choiceHolder'>
                 <div class = 'choiceSelection'></div>
+                <p class = 'choiceContent'>5 seconds</p>
+            </div>
+
+            <div class = 'choiceHolder'>
+                <div class = 'choiceSelection'></div>
+                <p class = 'choiceContent'>10 seconds</p>
+            </div>
+
+            <div class = 'choiceHolder'>
+                <div class = 'choiceSelection'></div>
                 <p class = 'choiceContent'>15 seconds</p>
             </div>
     
             <div class = 'choiceHolder'>
                 <div class = 'choiceSelection'></div>
-                <p class = 'choiceContent'>20 seconds</p>
+                <p class = 'choiceContent'>25 seconds</p>
             </div>
     
             <div class = 'choiceHolder'>
                 <div class = 'choiceSelection'></div>
-                <p class = 'choiceContent'>30 seconds</p>
+                <p class = 'choiceContent'>45 seconds</p>
+            </div>
+
+            <div class = 'choiceHolder'>
+                <div class = 'choiceSelection'></div>
+                <p class = 'choiceContent'>60 seconds</p>
             </div>
     
             <div class = 'choiceHolder'>
@@ -54,13 +69,39 @@
         <div id = 'getStarted'>Get Started</div>
     </div>
 
-    <div id = 'ingame'>
-
+    <div id = 'ingame'><!--INGAME CODE-->
+        <div id = 'navigation'>
+            <p id = 'navigationMainText'>Quiz in progress: Test</p>
+            <div id = 'subNavigation'>
+                <p class = 'indivSubNavigation'>Disable visual timer</p>
+                <p class = 'indivSubNavigation'>Exit Quiz</p>
+            </div>
+        </div>
+        <div id = 'visualTimer'></div>
+        <div id = 'entireQuiz'>
+            <div id = 'leftArrow'>
+                <div id = 'childLeft'><</div>
+            </div>
+            <div id = 'quizContent'>
+            </div>
+            <div id = 'rightArrow'>
+                <div id = 'childRight'>></div>
+            </div>
+        </div>
     </div>
 
-    <div id = 'postgame'>
-
+    <div id = 'postgame'><!--POSTGAME CODE-->
+        <p id = 'bigResult'>Congratulations, you got <span id = 'numCorrect'></span> of 5 questions correct!</p>
+        <p id = 'scoreDisplay'>Your score is: 69420</p>
+        <div id = 'endLinksHolder'>
+            <p class = 'indivEndLink'>Go over questions</p>
+            <p class = 'indivEndLink'>Exit quiz</p>
+        </div>
+        <div id = 'scoreBreakdown'>A quick score breakdown:</div>
+        <div class = 'scoreBreakdownDetail'></div>
+        <div class = 'scoreBreakdownDetail'></div>
     </div>
 </body>
 <script src="js/game.js"></script>
+<script src="js/listofquestions.js"></script>
 </html>
