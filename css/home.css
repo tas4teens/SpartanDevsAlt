@@ -1,0 +1,21 @@
+/*this css is for the home page*/
+
+body{
+font-family: 'Open Sans', sans-serif;
+}
+
+button {
+
+background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+}
+html{
+    background-image: url("https://images.pexels.com/photos/2521620/pexels-photo-2521620.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260") ;
+    background-size: 100%;
+}
