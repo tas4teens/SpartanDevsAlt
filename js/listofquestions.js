@@ -38,8 +38,25 @@ var listOfQuestions =
 
  {question: 'What is ocean in Hawaiian?', choices: ['Moana', 'Mauka', 'Ewa', 'Kilauea'], answer: 'Moana', type: 'normal', category: [2, 6], explanation: 'C'}, 
 
- {question: 'The ohia tree, one of Hawaii’s most abundant trees, is being wiped out by an invasive fungal disease, so please make sure to:', choices: ['Clean your gear to not carry invasive species', 'Bring new species to Hawaii', 'Leave trash and litter', 'Use environmentally harmful bug repellent'], answer: 'Clean your gear to not carry invasive species', type: 'normal', category: [2], explanation: 'Invasive species are a threat to nature, so please be sure to not bring anything that isn\'t native to Hawaii.'}
+ {question: 'The ohia tree, one of Hawaii’s most abundant trees, is being wiped out by an invasive fungal disease, so please make sure to:', choices: ['Clean your gear to not carry invasive species', 'Bring new species to Hawaii', 'Leave trash and litter', 'Use environmentally harmful bug repellent'], answer: 'Clean your gear to not carry invasive species', type: 'normal', category: [2], explanation: 'Invasive species are a threat to nature, so please be sure to not bring anything that isn\'t native to Hawaii.'},
+
+ {question: 'Your friend leaves the park without containing the camp fire. Do you...', choices: ['Leave it', 'Contain it yourself', 'Call 911', 'none of the above'], answer: 'Call 911', type: 'in order', category: [3], explanation: 'It is always best to call 911 in this situation and let the authorities handle it'},
+
+ {question: 'Your dog poops while walking. Do you', choices: ['Pick it up', 'Leave it', 'Take a picture and flex it on instagram', 'None of the above'], answer: 'Pick it up', type: 'in order', category: [3], explanation: 'In any situation, you should clean up after yourself leaving everything the same or better than you found it'},
+
+ {question: 'You drop some trash leaving your friend’s car. Do you', choices: ['Leave it', 'Pick it up and dispose of it properly', 'Dump it in the ocean', 'None of the above'], answer: 'Pick it up and dispose of it properly', type: 'in order', category: [3], explanation: 'In any situation, you should clean up after yourself leaving everything the same or better than you found it'},
+
+ {question: 'You encounter a wild boar on a hike. Do you', choices: ['Respect it and leave it be', 'Chase it down', 'Throw trash at it', 'None of the Above'], answer: 'Respect it and leave it be', type: 'in order', category: [3], explanation: 'intruding on another animals space may end up hurting either it or yourself'},
+
+ {question: 'Another group is ruining your photo. Do you', choices: ['Push them', 'Wait or ask them to move', 'Insult them', 'None of the Above'], answer: 'Wait or ask them to move', type: 'in order', category: [3], explanation: 'You should not inconvience another group'},
+
+ {question: 'What word is used to greet people and means “hello”?', choices: ['Ohana', 'Aloha', 'Lanai', 'Maka'], answer: 'Aloha', type: 'normal', category: [1], explanation: 'Aloha means hello in hawaiian'},
+
+ {question: 'What food originated in Hawaii?', choices: ['Poi', 'Lau Lau', 'kalua pig', 'All of the above'], answer: 'All of the above', type: 'in order', category: [1], explanation: 'Poi, Lau Lau, and Kalua Pig are all native to hawaii'},
+
+ {question: 'Native Hawaiians refer to themselves as kama’aina which means people of the land', choices: ['True', 'False'], answer: 'True', type: 'in order', category: [1], explanation: 'kama’aina is used to refer to Hawaii natives'},
+
+ {question: 'Touching noses with somebody is called “ha” and means the breath of life', choices: ['True', 'False'], answer: 'True', type: 'in order', category: [1], explanation: 'touching noses is a greeting symbolizing the breath of life'},
+
+ {question: 'What is a way to show friendship, love, or celebrate or honor someone?', choices: ['Going to the beach by yourself ', 'Stealing someone else’s food', 'Giving a lei', 'A high five '], answer: 'Giving a lei', type: 'normal', category: [1], explanation: 'Giving a lei to someone symbolizes friendship, love, celebration, and honor'},
 ];
-
-
-

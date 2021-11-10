@@ -50,18 +50,23 @@ body{
 }
 
 .quizChoice{
-    margin-left: 15%;
-    margin-right: 15%;
-    font-size: 165%;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    color: white;
+    margin-left: 13%;
+    margin-right: 13%;
+    font-size: 220%;
+    text-align: center;
+    padding-top: 7%;
+    padding-bottom: 7%;
     border: 2px solid green;
     margin-top: 1%;
     -webkit-user-select: none;
     transition: 0.3s;
-
+    background-position: 50% 80%;
+    background-size: cover;
+    backdrop-filter: brightness(-50%);
+    font-weight: bold;
+    color: white;
+    
 }
 
 .quizChoice:hover{
@@ -414,9 +419,11 @@ a{
         margin-right: 7.5%;
         font-size: 5.25vw;
         padding-left: 3%;
-        padding-top: 2%;
-        padding-bottom: 2%;
+        padding-top: 5%;
+        padding-bottom: 5%;
         margin-top: 2%;
+        background-position: 50% 60%;
+        padding-left: 0;
     }
 
     #timeLimit{
@@ -448,6 +455,91 @@ a{
         font-size: 6vw;
         margin-left: 20%;
         margin-right: 20%;
-        margin-top: 45%;
+        margin-top: 90%;
+    }
+
+    #leftArrow{
+        width: 10%;
+        font-size: 300%;
+    }
+
+    #rightArrow{
+        width: 10%;
+        font-size: 300%;
+    }
+
+    #quizContent{
+        width: 80%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #navigationMainText{
+        font-size: 5vw;
+        width: 60%;
+        margin-left: 5%;
+        padding-left: 0;
+    }
+
+    #subNavigation{
+        width: 40%;
+        flex-direction: column;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .indivSubNavigation{
+        width: 100%;
+        font-size: 4vw;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .question{
+        font-size: 5.5vw;
+        line-height: 1.5;
+    }
+
+    .questionChoiceHolder{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .questionChoiceEmpty{
+        height: 33px;
+        width: 33px;
+        border: 3px solid blue;
+    }
+
+    .questionChoiceContent{
+        font-size: 5vw;
+    }
+
+    .scoreBreakdownDetail{
+        flex-direction: column;
+    }
+
+    .holder{
+        width: 100%;
+    }
+
+    .indivEndLink{
+        width: 100%;
+    }
+
+    #bigResult{
+        font-size: 8vw;
+    }
+
+    #scoreDisplay{
+        font-size: 7vw;
+        margin-top: 5%;
+        margin-bottom: 0;
+    }
+
+    #scoreBreakdown{
+        font-size: 7vw;
     }
 }

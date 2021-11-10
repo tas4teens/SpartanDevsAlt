@@ -13,22 +13,28 @@ var firstTime;
 var isUserOnQuestion = false;
 var scoreBreakdownText = ['Questions correct:', 'Time spent:', 'Longest correct answer streak:', 'Your total score:']
 var scoreBreakdownColors = ['darkgreen', 'orange', 'purple', 'cornflowerblue'];
+var backgroundImages = ['url(https://images.pexels.com/photos/60217/pexels-photo-60217.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)', 'url(https://p0.pxfuel.com/preview/778/544/37/hawaii-diamond-head-honolulu-oahu.jpg)', 'url(https://p1.pxfuel.com/preview/765/978/336/hawaii-oahu-mountain-sky-paradise-scenic.jpg)', 'url(https://p1.pxfuel.com/preview/182/655/633/hawaii-oahu-ko-olina-landscape.jpg)', 'url(https://p1.pxfuel.com/preview/123/765/129/waikiki-beach-hawaii-honolulu-oahu.jpg)']
 var currentStreak = 0;
 var correctQuestions = 0;
 var totalTimeElapsed = 0;
 var totalSpeedScore = 0;
 var totalStreakScore = 0;
 
+//generate background image
+for (var i = 0; i < 5; i++){
+    document.getElementsByClassName('quizChoice')[i].style.backgroundImage = backgroundImages[i];
+}
+
 function detectGameMode(){
     for (var i = 0; i < document.getElementsByClassName('quizChoice').length; i++){
-        document.getElementsByClassName('quizChoice')[i].style.color = 'black';
-        document.getElementsByClassName('quizChoice')[i].style.backgroundColor = 'white';
+        document.getElementsByClassName('quizChoice')[i].style.color = 'white';
+        document.getElementsByClassName('quizChoice')[i].style.backgroundImage = backgroundImages[i];
     }
 
     for (var i = 0; i < listOfGameModes.length; i++){
         if(this.innerHTML == listOfGameModes[i]){
-            document.getElementsByClassName('quizChoice')[i].style.color = 'white';
-            document.getElementsByClassName('quizChoice')[i].style.backgroundColor = 'green';
+            document.getElementsByClassName('quizChoice')[i].style.backgroundColor= 'green';
+            document.getElementsByClassName('quizChoice')[i].style.backgroundImage = 'none';
             gamemode = i+1;
             break;
         }
@@ -67,6 +73,12 @@ function launch(){
     document.getElementById('ingame').style.display = 'block';
     document.getElementById('entireQuiz').style.display = 'block';
     document.getElementById('entireQuiz').style.display = 'flex';
+    if(timelimit > 0){
+        document.getElementById('visualTimer').style.display = 'block';
+    }else{
+        document.getElementById('visualTimer').style.display = 'none';
+        document.getElementById('navigation').style.marginBottom = '3%';
+    }
 
     //alert('hello world');
     dummy = [];
@@ -95,7 +107,7 @@ function launch(){
     //console.log(dummy);
 
     //start quiz
-    document.getElementById('navigationMainText').innerHTML = 'Quiz in progress: ' + listOfGameModes[gamemode-1];
+    document.getElementById('navigationMainText').innerHTML = listOfGameModes[gamemode-1] + ' quiz';
     createElements();
 }
 
@@ -218,7 +230,16 @@ function nextQuestion(){
         document.getElementById('ingame').style.display = 'none';
         showEndScreen();
     }
-    
+}
+
+function hideTimer(){
+    if(document.getElementById('visualTimer').style.display == 'block'){
+        document.getElementById('visualTimer').style.display = 'none';
+        document.getElementById('navigation').style.marginBottom = '3%';
+        this.innerHTML = 'Visual timer hidden!'
+    }else{
+        document.getElementById('visualTimer').style.display == 'block';
+    }
 }
 
 function previousQuestion(){
@@ -250,7 +271,9 @@ function showEndScreen(){
             correctQuestions++;
             currentStreak+= 1;
             totalStreakScore += (currentStreak*400);
-            totalSpeedScore += userTimes[i];
+            if(timelimit > 0){
+                totalSpeedScore += userTimes[i];
+            }
             userStreaks.push(currentStreak);
         }else{
             currentStreak = 0;
@@ -304,7 +327,12 @@ function showEndScreen(){
             if(i === 0 && j === 0){
                 n.innerHTML = 'Original score: ' + (correctQuestions*1000);
             }else if (i === 0 && j === 1){
-                n.innerHTML = 'Score added by ' + Math.trunc(totalSpeedScore);
+                if(timelimit > 0){
+                    n.innerHTML = 'Score added by ' + Math.trunc(totalSpeedScore);
+                }else{
+                    n.innerHTML = 'Time limit not set; no score added';
+                }
+                
             }else if (i === 1 && j === 0){
                 n.innerHTML = 'Score added by ' + (totalStreakScore/2);
             }else{
@@ -367,4 +395,5 @@ document.getElementById('leftArrow').addEventListener('click', previousQuestion)
 document.getElementById('rightArrow').addEventListener('click', nextQuestion);
 document.getElementById('getStarted').addEventListener('click', startQuiz);
 document.getElementsByClassName('indivSubNavigation')[1].addEventListener('click', quit);
-document.getElementsByClassName('indivEndLink')[1].addEventListener('click', quit);
+document.getElementsByClassName('indivSubNavigation')[0].addEventListener('click', hideTimer);
+document.getElementsByClassName('indivEndLink')[0].addEventListener('click', quit);
