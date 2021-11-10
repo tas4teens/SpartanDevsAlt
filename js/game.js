@@ -7,11 +7,17 @@ var listOfGameModes = ['Local customs', 'Sensitive Hawaiian environments', '"Lea
 var detect;
 var userResults = [-1, -1, -1, -1, -1];
 var userTimes = [];
+var userStreaks = [];
+var userScore = 0;
 var firstTime;
 var isUserOnQuestion = false;
-var scoreBreakdownText = ['Questions correct:', 'Time spent:', 'Longest correct answer streak:', 'Rank:']
+var scoreBreakdownText = ['Questions correct:', 'Time spent:', 'Longest correct answer streak:', 'Your total score:']
 var scoreBreakdownColors = ['darkgreen', 'orange', 'purple', 'cornflowerblue'];
+var currentStreak = 0;
+var correctQuestions = 0;
 var totalTimeElapsed = 0;
+var totalSpeedScore = 0;
+var totalStreakScore = 0;
 
 function detectGameMode(){
     for (var i = 0; i < document.getElementsByClassName('quizChoice').length; i++){
@@ -233,6 +239,28 @@ function previousQuestion(){
 
 function showEndScreen(){
     document.getElementById('postgame').style.display = 'block';
+    //calculate scores
+    currentStreak = 0;
+    correctQuestions = 0;
+    totalSpeedScore = 0;
+    totalStreakScore = 0;
+    for (var i = 0; i < 5; i++){
+        if((userResults[i] - 1) === dummy[i].choices.indexOf(dummy[i].answer)){
+            currentStreak++;
+            correctQuestions++;
+            currentStreak+= 1;
+            totalStreakScore += (currentStreak*400);
+            totalSpeedScore += userTimes[i];
+            userStreaks.push(currentStreak);
+        }else{
+            currentStreak = 0;
+            userStreaks.push(currentStreak);
+        }
+    }
+    totalSpeedScore = Math.trunc(totalSpeedScore / 3);
+    document.getElementById('numCorrect').innerHTML = correctQuestions;
+    document.getElementById('scoreDisplay').innerHTML = "Your score is: " + Math.round((correctQuestions*1000)+totalSpeedScore+(totalStreakScore/2));
+
     for(var i = 0; i < 2; i++){
         for(var j = 0; j < 2; j++){
             var h = document.createElement('div');
@@ -247,9 +275,10 @@ function showEndScreen(){
 
             var m = document.createElement('p');
             if(i === 0 && j === 0){
-                m.innerHTML = 1 + '/5';
+                m.innerHTML = correctQuestions + '/5';
             }else if (i === 0 && j === 1){
                 var newString;
+                
                 if (totalTimeElapsed > 60000){
                     newString = Math.trunc(totalTimeElapsed / 60000) + 'm ' + Math.trunc((totalTimeElapsed - (Math.trunc(totalTimeElapsed / 60000)*60000))/1000) + 's ' + (totalTimeElapsed - (Math.trunc(totalTimeElapsed / 60000)*60000) - (Math.trunc((totalTimeElapsed - (Math.trunc(totalTimeElapsed / 60000)*60000))/1000)*1000)) + 'ms';
                 }else{
@@ -257,21 +286,15 @@ function showEndScreen(){
                 }
                 m.innerHTML = newString;
             }else if (i === 1 && j === 0){
-                m.innerHTML = foundStreak;
-            }else{
-                if (userScore < 6000){
-                    m.innerHTML = 'Newbie'
-                }else if (userScore < 13000){
-                    m.innerHTML = 'Amateur'
-                }else if (userScore < 21000){
-                    m.innerHTML = 'Rookie'
-                }else if (userScore < 28500){
-                    m.innerHTML = 'Skilled'
-                }else if (userScore < 37000){
-                    m.innerHTML = 'Master';
-                }else{
-                    m.innerHTML = 'Speedrunner'
+                var max = -1;
+                for(var z = 0; z < userStreaks.length; z++){
+                    if(userStreaks[z] > max){
+                        max = userStreaks[z];
+                    }
                 }
+                m.innerHTML = (max/2);
+            }else{
+                m.innerHTML = Math.round((correctQuestions*1000)+totalSpeedScore+(totalStreakScore/2));
             }
             m.className = 'second';
             document.getElementsByClassName('holder')[(i*2)+j].appendChild(m);
@@ -283,13 +306,51 @@ function showEndScreen(){
             }else if (i === 0 && j === 1){
                 n.innerHTML = 'Score added by ' + Math.trunc(totalSpeedScore);
             }else if (i === 1 && j === 0){
-                n.innerHTML = 'Score added by ' + totalStreakScore;
+                n.innerHTML = 'Score added by ' + (totalStreakScore/2);
             }else{
-                n.innerHTML = 'This doesn\'t affect your score, but it\'s nice to know!'
+                n.innerHTML = 'Great job!'
             }
             document.getElementsByClassName('holder')[(i*2)+j].appendChild(n);
         }
     }
+}
+
+function quit(){
+    if(confirm('Are you sure you want to quit?')){
+        //reverting variables
+        dummy = [];
+        questionNumber = 0;
+        randomChoice = [1, 2, 3, 4];
+        detect = -1;
+        userResults = [-1, -1, -1, -1, -1];
+        userTimes = [];
+        userStreaks = [];
+        userScore = 0;
+        isUserOnQuestion = false;
+        currentStreak = 0;
+        correctQuestions = 0;
+        totalTimeElapsed = 0;
+        totalSpeedScore = 0;
+        totalStreakScore = 0;
+
+        //removes all questions
+        document.getElementsByClassName('question')[0].remove();
+        for(var i = 0; i < 4; i++){
+            document.getElementsByClassName('questionChoiceHolder')[0].remove();
+        }
+
+        if(document.getElementById('postgame').style.display === 'block'){
+            for(var i = 0; i < 4; i++){
+                document.getElementsByClassName('holder')[0].remove();
+            }
+        }
+        
+        //back to main page
+        document.getElementById('ingame').style.display = 'none';
+        document.getElementById('postgame').style.display = 'none';
+        document.getElementById('pregame').style.display = 'block';
+    }
+    
 }
 
 //adding event listeners
@@ -305,3 +366,5 @@ for (var i = 0; i < document.getElementsByClassName('choiceHolder').length; i++)
 document.getElementById('leftArrow').addEventListener('click', previousQuestion);
 document.getElementById('rightArrow').addEventListener('click', nextQuestion);
 document.getElementById('getStarted').addEventListener('click', startQuiz);
+document.getElementsByClassName('indivSubNavigation')[1].addEventListener('click', quit);
+document.getElementsByClassName('indivEndLink')[1].addEventListener('click', quit);

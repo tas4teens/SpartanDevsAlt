@@ -293,6 +293,92 @@ a{
     border-bottom-right-radius: 15px;
 }
 
+.scoreBreakdownDetail{
+    display: flex;
+}
+
+.holder{
+    width: 50%;
+    border: 2px solid black;
+    background-color: green;
+    color: white;
+}
+
+.holder:hover{
+    opacity: 0.75;
+    cursor: pointer;
+}
+.first{
+    font-size: 175%;
+    text-align: center;
+    margin-bottom: 0.5%;
+    
+}
+
+.second{
+    text-align: center;
+    font-size: 275%;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: white;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.third{
+    text-align: center;
+    font-size: 125%;
+    color: white;
+}
+
+#bigResult{
+    margin-top: 2.5%;
+    font-size: 250%;
+    text-align:center;
+    margin-bottom: 2%;
+}
+
+#scoreDisplay{
+    margin-top: 0%;
+    font-size: 200%;
+    text-align: center;
+}
+
+#numCorrect{
+    color: green;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#endLinksHolder{
+    display: flex;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    justify-content: center;
+}
+
+.indivEndLink{
+    width: 40%;
+    background-color: cornflowerblue;
+    text-align: center;
+    color: white;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    font-size: 150%;
+    margin-left: 5%;
+    margin-right: 5%;
+    -webkit-user-select: none;
+}
+
+#scoreBreakdown{
+    font-size: 200%;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 2%;
+}
+
 @media only screen and (orientation: portrait){
     body{
         overflow-x: hidden;
