@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /*this css is for the home page*/
+
+        .title{
+    font-size: 200%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+body{
+font-family: 'Open Sans', sans-serif;
+}
+
+button {
+
+    border: 2px solid green;
+    height: 60px;
+    width: 100px;
+    border-radius: 45%;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 100%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+html{
+    background-image: url("https://images.pexels.com/photos/2521620/pexels-photo-2521620.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260") ;
+    background-size: 100%;
+}
+.centeralign{
+    text-align:center;
+}
+    </style>
+    <script>
+        function redirectGame(){
+            location.href='game.html';
+        }
+        function redirectPoint(){
+            location.href='points.html';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">Pono Points</title>
+</head>
+
+<body>
+    <div class="centeralign">
+    <h1 class="title" >Pono Points</h1>
+    <h2 class="title">Learn about Hawaii!</h2>
+    <button onclick='redirectGame()'>Play</button>
+    <button onclick='redirectPoint()'>Points</button>
+    <h2 class="title">Help</h2>
+    <h2 class="title">Logout</h2>
+    <h2 class="title">Points</h2>
+</div>
+</body>
+
+</html>
