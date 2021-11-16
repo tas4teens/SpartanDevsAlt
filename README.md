@@ -6,7 +6,7 @@ We created a game that works like the “heads up game”, where groups can play
 
 Each 5-question quiz is randomly generated from our question bank. Scores will depend on accuracy, correct answer streak, and time spent answering each question.
 
-Challenges: Currently working on shifting our server to host our data from local to secured.
+<b>Challenges<b>: Currently working on shifting our server to host our data from local to secured.
 
 What we learned: Effective communication, delegating of tasks, and bringing all our pages together.
 
