@@ -19,4 +19,4 @@ Each 5-question quiz is randomly generated from our question bank. Scores will d
 <br>Effective communication, delegating of tasks, and bringing all our pages together.
 
 <b>PROUD OF</b> 
-<br>First Maryknoll School coding club competition entry. Finding a group of coders on campus to build together.
+<br>First competition entry. Finding a group of coders to build together.
