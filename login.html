@@ -74,13 +74,14 @@ body{
     <script>
         $(document).ready(() => {
             $("#signupbtn").click(() => {
-                $(location).attr("href", "http://tas4teens.github.io/spartandevsalt/signup.html");
+                $(location).attr("href", "http://localhost:8000/signup.html");
             })
 
             var username;
             var password;
             var USERINFO = undefined;
 
+            $("#submit").click(() => {
                 username = $("#username").val();
                 password = $("#password").val();
 
