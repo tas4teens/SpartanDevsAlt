@@ -13,22 +13,28 @@ var firstTime;
 var isUserOnQuestion = false;
 var scoreBreakdownText = ['Questions correct:', 'Time spent:', 'Longest correct answer streak:', 'Your total score:']
 var scoreBreakdownColors = ['darkgreen', 'orange', 'purple', 'cornflowerblue'];
+var backgroundImages = ['url("https://images.pexels.com/photos/60217/pexels-photo-60217.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")', 'url("https://p0.pxfuel.com/preview/778/544/37/hawaii-diamond-head-honolulu-oahu.jpg")', 'url("https://p1.pxfuel.com/preview/765/978/336/hawaii-oahu-mountain-sky-paradise-scenic.jpg")', 'url("https://p1.pxfuel.com/preview/182/655/633/hawaii-oahu-ko-olina-landscape.jpg")', 'url("https://p1.pxfuel.com/preview/123/765/129/waikiki-beach-hawaii-honolulu-oahu.jpg")']
 var currentStreak = 0;
 var correctQuestions = 0;
 var totalTimeElapsed = 0;
 var totalSpeedScore = 0;
 var totalStreakScore = 0;
 
+for (var i = 0; i < 5; i++){
+    document.getElementsByClassName('quizChoice')[i].style.backgroundImage = backgroundImages[i];
+}
+
 function detectGameMode(){
     for (var i = 0; i < document.getElementsByClassName('quizChoice').length; i++){
-        document.getElementsByClassName('quizChoice')[i].style.color = 'black';
-        document.getElementsByClassName('quizChoice')[i].style.backgroundColor = 'white';
+        document.getElementsByClassName('quizChoice')[i].style.color = 'white';
+        document.getElementsByClassName('quizChoice')[i].style.backgroundImage = backgroundImages[i];
     }
 
     for (var i = 0; i < listOfGameModes.length; i++){
         if(this.innerHTML == listOfGameModes[i]){
             document.getElementsByClassName('quizChoice')[i].style.color = 'white';
             document.getElementsByClassName('quizChoice')[i].style.backgroundColor = 'green';
+            document.getElementsByClassName('quizChoice')[i].style.backgroundImage = 'none';
             gamemode = i+1;
             break;
         }
@@ -366,5 +372,5 @@ for (var i = 0; i < document.getElementsByClassName('choiceHolder').length; i++)
 document.getElementById('leftArrow').addEventListener('click', previousQuestion);
 document.getElementById('rightArrow').addEventListener('click', nextQuestion);
 document.getElementById('getStarted').addEventListener('click', startQuiz);
-document.getElementsByClassName('indivSubNavigation')[1].addEventListener('click', quit);
-document.getElementsByClassName('indivEndLink')[1].addEventListener('click', quit);
+document.getElementsByClassName('indivSubNavigation')[0].addEventListener('click', quit);
+document.getElementsByClassName('indivEndLink')[0].addEventListener('click', quit);

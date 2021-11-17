@@ -266,14 +266,14 @@ a{
     font-size: 160%;
     padding-left: 10%;
     font-weight: bold;
-    width: 55%;
+    width: 70%;
     margin-top:1.7%;
     margin-bottom: 1.7%;
 }
 
 #subNavigation{
     display: flex;
-    width: 45%;
+    width: 30%;
 }
 
 .indivSubNavigation{
@@ -476,7 +476,7 @@ a{
 
     #navigationMainText{
         font-size: 5vw;
-        width: 60%;
+        width: 100%;
         margin-left: 5%;
         padding-left: 0;
     }
@@ -530,16 +530,30 @@ a{
     }
 
     #bigResult{
-        font-size: 8vw;
+        font-size: 7.5vw;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        margin-top: 7%;
     }
 
     #scoreDisplay{
-        font-size: 7vw;
+        font-size: 6.5vw;
         margin-top: 5%;
         margin-bottom: 0;
     }
 
     #scoreBreakdown{
         font-size: 7vw;
+    }
+
+    #endLinksHolder{
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    #scoreBreakdown{
+        font-size: 6.5vw;
+        margin-bottom: 4%;
     }
 }

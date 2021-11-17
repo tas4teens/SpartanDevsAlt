@@ -54,9 +54,9 @@ var listOfQuestions =
 
  {question: 'What food originated in Hawaii?', choices: ['Poi', 'Lau Lau', 'kalua pig', 'All of the above'], answer: 'All of the above', type: 'in order', category: [1], explanation: 'Poi, Lau Lau, and Kalua Pig are all native to hawaii'},
 
- {question: 'Native Hawaiians refer to themselves as kama’aina which means people of the land', choices: ['True', 'False'], answer: 'True', type: 'in order', category: [1], explanation: 'kama’aina is used to refer to Hawaii natives'},
+ {question: 'Native Hawaiians refer to themselves as ______ which means people of the land', choices: ['Kamaaina', 'Ohana', 'Kane', 'Luau'], answer: 'Kamaaina', type: 'normal', category: [1], explanation: 'kama’aina is used to refer to Hawaii natives'},
 
- {question: 'Touching noses with somebody is called “ha” and means the breath of life', choices: ['True', 'False'], answer: 'True', type: 'in order', category: [1], explanation: 'touching noses is a greeting symbolizing the breath of life'},
+ {question: 'Touching noses with somebody is called “____” and means the breath of life', choices: ['Ha', 'Ho', 'Oo', 'Ka'], answer: 'Ha', type: 'normal', category: [1], explanation: 'touching noses is a greeting symbolizing the breath of life'},
 
  {question: 'What is a way to show friendship, love, or celebrate or honor someone?', choices: ['Going to the beach by yourself ', 'Stealing someone else’s food', 'Giving a lei', 'A high five '], answer: 'Giving a lei', type: 'normal', category: [1], explanation: 'Giving a lei to someone symbolizes friendship, love, celebration, and honor'},
 ];
