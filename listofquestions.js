@@ -38,7 +38,7 @@ var listOfQuestions =
 
  {question: 'What is ocean in Hawaiian?', choices: ['Moana', 'Mauka', 'Ewa', 'Kilauea'], answer: 'Moana', type: 'normal', category: [2, 6], explanation: 'C'}, 
 
- {question: 'The ohia tree, one of Hawaii’s most abundant trees, is being wiped out by an invasive fungal disease, so please make sure to:', choices: ['Clean your gear to not carry invasive species', 'Bring new species to Hawaii', 'Leave trash and litter', 'Use environmentally harmful bug repellent'], answer: 'Clean your gear to not carry invasive species', type: 'normal', category: [2], explanation: 'Invasive species are a threat to nature, so please be sure to not bring anything that isn\'t native to Hawaii.'},
+ {question: 'The ohia tree, one of Hawaii’s most abundant trees, is being wiped out by an invasive fungal disease, so please make sure to:', choices: ['Clean your gear to not carry invasive species', 'Bring new species to Hawaii', 'Leave trash and litter', 'Use environmentally harmful bug repellent'], answer: 'Clean your gear to not carry invasive species', type: 'normal', category: [2, 4], explanation: 'Invasive species are a threat to nature, so please be sure to not bring anything that isn\'t native to Hawaii.'},
 
  {question: 'Your friend leaves the park without containing the camp fire. Do you...', choices: ['Leave it', 'Contain it yourself', 'Call 911', 'none of the above'], answer: 'Call 911', type: 'in order', category: [3], explanation: 'It is always best to call 911 in this situation and let the authorities handle it'},
 
