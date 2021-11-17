@@ -20,7 +20,7 @@ var totalTimeElapsed = 0;
 var totalSpeedScore = 0;
 var totalStreakScore = 0;
 
-for (var i = 0; i < 5; i++){
+for (var i = 0; i < 4; i++){
     document.getElementsByClassName('quizChoice')[i].style.backgroundImage = backgroundImages[i];
 }
 
